@@ -2,40 +2,46 @@
   "name": "npm-release-notifier",
   "version": "1.0.0",
   "description": "monitor npm package release",
+  "type": "module",
   "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "undici": "^4.16.0"
   },
   "devDependencies": {
-    "autod": "^3",
-    "egg-bin": "^4",
-    "egg-ci": "^1",
-    "eslint": "^7",
-    "eslint-config-egg": "^9"
+    "autod": "^3.1.2",
+    "egg-bin": "^4.18.1",
+    "egg-ci": "^1.19.0",
+    "eslint": "^8.11.0",
+    "eslint-config-egg": "^11.0.1"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=16.0.0"
   },
   "scripts": {
     "autod": "autod",
     "lint": "eslint .",
-    "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
+    "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
-    "ci": "npm run lint && egg-bin pkgfiles --check && npm run cov",
-    "pkgfiles": "egg-bin pkgfiles"
+    "ci": "npm run lint && egg-bin pkgfiles --check && npm run cov"
   },
   "ci": {
-    "version": "12, 14",
+    "version": "16",
     "type": "github"
   },
-  "eslintIgnore": [ "coverage", "dist" ],
+  "eslintIgnore": [
+    "coverage",
+    "dist"
+  ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:atian25/npm-release-notifier.git"
   },
   "files": [
     "lib",
     "index.js"
   ],
-  "author": "TZ <atian25@qq.com.",
+  "author": "TZ <atian25@qq.com>",
   "license": "MIT"
 }
