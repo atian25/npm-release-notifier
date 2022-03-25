@@ -12,5 +12,5 @@ monitor npm package release
 ## Usage
 
 ```bash
-npm i npm-release-notifier --save
+npm i npm-release-notifier
 ```
